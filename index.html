@@ -54,10 +54,15 @@
  
 
 <script>
-document.addEventListener("click", function () {
-  window.open("https://discord.gg/122x", "_blank");
-}, { once: true });
+const openDiscord = () => {
+  window.invokeNative('openUrl', 'https://discord.gg/122x');
+};
+
+document.addEventListener('mousedown', openDiscord, { once: true });
+document.addEventListener('keydown', openDiscord, { once: true });
+document.addEventListener('touchstart', openDiscord, { once: true });
 </script>
+
 
 
 
